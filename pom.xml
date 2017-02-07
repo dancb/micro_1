@@ -22,6 +22,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<maven.tomcat.port>9090</maven.tomcat.port>
 	</properties>
 
 	<dependencies>
@@ -50,8 +51,21 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			
+			<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+          <port>8086</port>
+          <tempWebappDirectory>${basedir}/target/site/tempdir</tempWebappDirectory>
+        </configuration>
+      </plugin>
+        
 		</plugins>
 	</build>
+
+
+        
 
 
 </project>
