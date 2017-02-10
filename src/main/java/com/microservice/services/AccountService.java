@@ -1,6 +1,5 @@
 package com.microservice.services;
 
-
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
@@ -19,6 +18,8 @@ import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.microservice.model.BaseResponse;;
 
 @Service
 public class AccountService {
@@ -57,7 +58,7 @@ public class AccountService {
 
     public AccountResponse getAccount(String jwt) {
         AccountResponse accountResponse = new AccountResponse();
-        accountResponse.setStatus(com.microservice.model.BaseResponse.Status.ERROR);
+        accountResponse.setStatus(BaseResponse.Status.ERROR);
 
         // verify JWT - will throw JWT Exception if not valid
         Jws<Claims> jws = Jwts.parser()
@@ -83,7 +84,7 @@ public class AccountService {
         }
 
         accountResponse.setMessage("Found Account");
-        accountResponse.setStatus(com.microservice.model.BaseResponse.Status.SUCCESS);
+        accountResponse.setStatus(BaseResponse.Status.SUCCESS);
         accountResponse.setAccount(accounts.get(userName));
 
         return accountResponse;

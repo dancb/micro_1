@@ -1,5 +1,21 @@
 package com.microservice.services;
 
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.JwsHeader;
+import io.jsonwebtoken.JwtException;
+import io.jsonwebtoken.SigningKeyResolver;
+import io.jsonwebtoken.SigningKeyResolverAdapter;
+import io.jsonwebtoken.impl.TextCodec;
+import io.jsonwebtoken.impl.crypto.RsaProvider;
+import io.jsonwebtoken.lang.Strings;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+
+import com.microservice.model.PublicCreds;
+
+import javax.annotation.PostConstruct;
 import java.security.Key;
 import java.security.KeyFactory;
 import java.security.KeyPair;
@@ -11,23 +27,6 @@ import java.security.spec.X509EncodedKeySpec;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-
-import javax.annotation.PostConstruct;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
-
-import com.microservice.model.PublicCreds;
-
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.JwsHeader;
-import io.jsonwebtoken.JwtException;
-import io.jsonwebtoken.SigningKeyResolver;
-import io.jsonwebtoken.SigningKeyResolverAdapter;
-import io.jsonwebtoken.impl.TextCodec;
-import io.jsonwebtoken.impl.crypto.RsaProvider;
-import io.jsonwebtoken.lang.Strings;
 
 @Service
 public class SecretService {

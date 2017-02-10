@@ -50,18 +50,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			
-			<plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-site-plugin</artifactId>
-        <configuration>
-          <port>8086</port>
-          <tempWebappDirectory>${basedir}/target/site/tempdir</tempWebappDirectory>
-        </configuration>
-      </plugin>
-      
-        
+			</plugin>  
 		</plugins>
 	</build>
 

@@ -1,8 +1,12 @@
 package com.microservice.controller;
 
-import java.util.Date;
-import java.util.Map;
 
+import io.jsonwebtoken.JwtException;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.MalformedJwtException;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.SignatureException;
+import io.jsonwebtoken.lang.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -13,12 +17,8 @@ import com.microservice.model.JWTResponse;
 import com.microservice.services.AccountService;
 import com.microservice.services.SecretService;
 
-import io.jsonwebtoken.JwtException;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.MalformedJwtException;
-import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.SignatureException;
-import io.jsonwebtoken.lang.Assert;
+import java.util.Date;
+import java.util.Map;
 
 public class BaseController {
 
