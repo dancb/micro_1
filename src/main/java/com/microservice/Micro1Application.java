@@ -6,11 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Micro1Application {
 
-	// nuevo cambio
-	// cam 2 haha
-	// holaaaaa
-	// test remoto
-	// aaaaaa!
+	// main app
 	public static void main(String[] args) {
 		SpringApplication.run(Micro1Application.class, args);
 	}
